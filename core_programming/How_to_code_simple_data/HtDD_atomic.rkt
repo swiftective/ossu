@@ -3,18 +3,17 @@
 
 ;; Data Definitions:
 
-
-;; Cityname is String
-;; interp. the name of a city
-(define CN! "Boston")
-(define CN2 "Vancouver")
+;; Cityname is String                 ; Type comment
+;; interp. the name of a city         ; Interpretation
+(define CN1 "Boston")                 ; Examples 1
+(define CN2 "Vancouver")              ; Examples 2
 
 #;
-(define (fn-for-city-name)
+(define (fn-for-city-name)            ; Template
   (... cn))
 
-;; Template rules used:
-;;    atomic non-distinct; String
+;; Template rules used:               ; Template rules
+;;    atomic non-distinct; string
 
 ;; Functions:
 
@@ -27,9 +26,9 @@
 
 ;; took Template from CityName
 
-;; (define (best? cn)
+;; (define (best? cn)                         ; Function body 1
 ;;   (if (string=? cn "Hogsmeade") #t #f))
 
-(define (best? cn) (string=? cn "Hogsmeade"))
+(define (best? cn) (string=? cn "Hogsmeade")) ; Function body 2
 
 (test) ; Running the tests
