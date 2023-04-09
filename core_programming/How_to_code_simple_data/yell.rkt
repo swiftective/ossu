@@ -4,7 +4,7 @@
 ;; String -> String ;; Signature
 ;; Add ! to the end of string ;; Purpose
 
-;; (define (yell str) "") ;; Snub
+;; (define (yell str) "") ;; Stub
 
 (check-expect (yell "Hello") "Hello!") ;; Tests
 (check-expect (yell "Hi") "Hi!")
