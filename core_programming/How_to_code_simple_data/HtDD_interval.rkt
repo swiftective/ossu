@@ -7,10 +7,9 @@
 (define SN2 2) ;middle
 (define SN3 3) ;aisle
 
-
+#;
 (define (fn-for-seat-num sn)
   (... sn))
-
 
 ;; Template rules used:
 ;;      - atomic non-distinct: Natural[1, 32]
