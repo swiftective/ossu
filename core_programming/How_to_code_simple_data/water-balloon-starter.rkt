@@ -53,7 +53,7 @@
        (balloon-a b)))
 
 ;; Template rules used
-;; - Compund: 2 fields
+;; - Compound 2 fields
 
 ;; ===========================
 ;; Functions:
