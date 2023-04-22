@@ -31,6 +31,7 @@
 ;; ===============================
 ;; Constants
 
+(define SPEED 3)
 (define WIDTH 400)
 (define HEIGHT 200)
 (define CTR-Y (/ HEIGHT 2))
@@ -61,7 +62,7 @@
 ;; Functions
 
 ;; Cow -> Cow
-;; start the world with ...
+;; start the world with (make-cow 0 SPEED)
 ;;
 (define (main c)
   (big-bang c                           ; Cow
@@ -132,6 +133,6 @@
         (make-cow (cow-x c) (- (cow-dx c)))]
         [else c]))
 
-(main (make-cow 0 3))
+(main (make-cow 0 SPEED))
 
 (test)
