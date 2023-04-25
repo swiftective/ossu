@@ -56,7 +56,7 @@
 
 ;; (define (sum lon) 0) ; Stub
 
-;; <use template from ListOfNumber>
+;; took template from ListOfNumber
 
 (define (sum lon)
   (cond
@@ -83,7 +83,7 @@
 
 ;; (define (count lon) 0) ; Stub
 
-;; <use template from ListOfNumber>
+;; took template from ListOfNumber
 
 (define (count lon)
   (cond

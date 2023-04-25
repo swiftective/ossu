@@ -50,7 +50,7 @@
 
 ;; (define (double lon) lon) ; Stub
 
-;; <use template from ListOfNumber>
+;; took template from ListOfNumber
 
 (define (double lon)
   (cond [(empty? lon) empty]

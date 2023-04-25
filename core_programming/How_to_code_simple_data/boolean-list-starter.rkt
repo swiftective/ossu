@@ -59,7 +59,7 @@
 
 ;; (define (all-true? lob) true) ; Stub
 
-;; <use template from ListOfBoolean>
+;; took template from ListOfBoolean
 
 (define (all-true? lob)
   (cond

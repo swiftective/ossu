@@ -57,7 +57,7 @@
 
 ;; (define (sum-of-area loi) 10) ; Stub
 
-;; <use template from ListOfImage>
+;; took template from ListOfImage
 
 (define (sum-of-area loi)
   (cond

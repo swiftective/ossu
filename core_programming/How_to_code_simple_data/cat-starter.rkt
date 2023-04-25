@@ -28,7 +28,7 @@
 
 ;; (define (next-cat c) 1) ; Stub
 
-;; <use template from Cat>
+;; took template from Cat
 
 (define (next-cat c)
   (+ c SPEED))
@@ -46,7 +46,7 @@
 
 ;; (define (render-cat c) MTS) ; Stub
 
-;; <use template from Cat>
+;; took template from Cat
 
 (define (render-cat c)
   (place-image CAT-IMG c CTR-Y MTS))

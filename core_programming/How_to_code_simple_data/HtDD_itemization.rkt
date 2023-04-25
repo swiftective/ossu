@@ -43,7 +43,7 @@
 
 ;; (define (countdown-to-image c) (square 0 "solid" "white")) ; Stub
 
-;; <use template from CountDown>
+;; took template from CountDown
 
 (define (countdown->image c)
   (cond

@@ -78,7 +78,7 @@
 
 ;; (define (next-color tlc) "red") ; Stub
 
-;; <use template from TLColor>
+;; took template from TLColor
 
 (define (next-color tlc)
   (cond

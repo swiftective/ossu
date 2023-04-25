@@ -70,7 +70,7 @@
 
 ;; (define (decrease-countdown cd) 5) ; Stub
 
-;; <use template from CountDown>
+;; took template from CountDown
 
 (define (decrease-countdown cd)
   (if (>= cd DECREMENT) (- cd DECREMENT) 0))
@@ -88,7 +88,7 @@
 
 ;; (define (render cd) MTS) ; Stub
 
-;; <use template from CountDown>
+;; took template from CountDown
 
 (define (render cd)
   (place-image

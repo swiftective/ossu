@@ -56,7 +56,7 @@
 
 ;; (define (demolish? bs) true) ; Stub
 
-;; <use template from BuildingStatus>
+;; took template from BuildingStatus
 
 (define (demolish? bs)
   (cond

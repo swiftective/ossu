@@ -32,7 +32,7 @@
 
 ;; (define (teenager? a) true) ; Stub
 
-;; <use template from Age>
+;; took template from Age
 
 (define (teenager? a)
   (and
@@ -75,7 +75,7 @@
 
 ;; (define (months-old a) ma) ; Stub
 
-;; <use template from MonthAge>
+;; took template from MonthAge
 
 (define (months-old ma)
   (* ma 12))
@@ -124,7 +124,7 @@
 
 ;; (define (increase-health h) h) ; Stub
 
-;; <use template from Health>
+;; took template from Health
 
 (define (increase-health h)
   (cond

@@ -51,7 +51,7 @@
 
 ;; (define (contains-ubc? los) true) ; Stub
 
-;; <use template from ListOfString>
+;; took template from ListOfString
 
 (define (contains-ubc? los)
   (cond

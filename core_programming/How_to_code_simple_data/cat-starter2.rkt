@@ -68,7 +68,7 @@
 (check-expect (advance-cat 3) (+ 3 SPEED))
 ;; (define (advance-cat c) 0)
 
-;; <use template from Cat>
+;; took template from Cat
 
 (define (advance-cat c)
   (+ c SPEED)
@@ -82,7 +82,7 @@
 
 ;; (define (render c) MTS)
 
-;; <use template from Cat>
+;; took template from Cat
 
 (define (render c)
   (place-image CAT-IMG c CTR-Y MTS)

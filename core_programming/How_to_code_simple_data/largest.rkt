@@ -51,7 +51,7 @@
 
 ;; (define (largest? lon) 10) ; Stub
 
-;; <use template from ListOfNumber>
+;; took template from ListOfNumber
 
 (define (largest? lon)
   (cond [(empty? lon) 0]

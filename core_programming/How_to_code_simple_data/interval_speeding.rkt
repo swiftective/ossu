@@ -23,7 +23,7 @@
 
 ;; (define (speeding? cs) true) ; Stub
 
-;; <use template from CarSpeed>
+;; took template from CarSpeed
 
 (define (speeding? cs) (> cs 110))
 

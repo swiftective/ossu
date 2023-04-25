@@ -30,7 +30,7 @@
 
 ;; (define (bump-up lg) "A") ; stub
 
-;; <use template from LetterGrade>
+;; took template from LetterGrade
 
 (define (bump-up lg)
   (cond [(string=? lg "A") "A"]
