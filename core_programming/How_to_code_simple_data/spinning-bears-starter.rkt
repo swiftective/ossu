@@ -90,9 +90,9 @@
 ;;
 (define (main b)
   (big-bang b                               ; Bear
-            (on-tick   next-bears)          ; Bear -> Bear
-            (to-draw   render)              ; Bear -> Image
-            (on-mouse  handle-mouse)))      ; Bear Integer Integer MouseEvent -> Bear
+            (on-tick   next-bears)          ; ListOfBear -> ListOfBear
+            (to-draw   render)              ; ListOfBear -> Image
+            (on-mouse  handle-mouse)))      ; ListOfBear Integer Integer MouseEvent -> ListOfBear
 
 
 
