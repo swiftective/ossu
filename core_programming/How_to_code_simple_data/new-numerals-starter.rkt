@@ -38,7 +38,7 @@
 (define (SUB1 n) (rest n))      ; NATURAL(>0) ->  NATURAL
 
 #;
-(define (fn-for-NATURAL n)
+(define (fn-for-natural n)
   (cond
     [(ZERO? n) (...)]
     [else
