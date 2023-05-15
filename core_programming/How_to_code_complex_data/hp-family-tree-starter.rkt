@@ -62,7 +62,7 @@
 ; this special value when writing your interp.
 
 
-;; FIY I didnot write this by hand but used a js to get this output from a js object generated
+;; FIY I didnot write this by hand but used js to get this output from a js object generated
 ;; by GOOGLE BARD using the same mutual reference technique
 ;; https://gist.github.com/swiftective/d64cdaabcbbb5e995b3e0caaf1810d98
 (define ARTHUR (make-wizard "Arthur Weasley" "Cherry"
