@@ -101,13 +101,14 @@
 (check-expect (wand-owners--wizard "NotAWant" ARTHUR) empty)
 (check-expect (wand-owners--wizard "Vine" ARTHUR)
               (list "Victoire Weasley" "Molly Weasley II" "Fred Weasley" "Rose Weasley")) ; Tests
+(check-expect (wand-owners--wizard "Hazel" ARTHUR) (list "Ginny Weasley"))
 
 ;; (define (wand-owners--wizard str w) empty) ; Stub
 ;; (define (wand-owners--low str low) empty) ; Stub
 
 (define (wand-owners--wizard str w)
   (if (string=? (wizard-wand w) str)
-   (list (wizard-name w))
+   (cons (wizard-name w) (wand-owners--low str (wizard-children w)))
    (wand-owners--low str (wizard-children w))))
 
 (define (wand-owners--low str low)
