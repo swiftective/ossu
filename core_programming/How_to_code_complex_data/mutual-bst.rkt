@@ -52,6 +52,9 @@
      (...
       (fn-for-junction m))]))
 
+(check-expect (find-finish--maze M0) false)
+(check-expect (find-finish--maze M1) "Found Finish")
+(check-expect (find-finish--maze M2) "Found Finish")
 
 (define (find-finish--junction j)
   (or
@@ -65,9 +68,5 @@
     [(and (string? m) (string=? "finish" m)) "Found Finish"]
     [else
      (find-finish--junction m)]))
-
-(find-finish--maze M0)
-(find-finish--maze M1)
-(find-finish--maze M2)
 
 (test)
