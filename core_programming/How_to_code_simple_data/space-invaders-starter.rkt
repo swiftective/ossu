@@ -639,9 +639,15 @@
 ; template from KeyEvent
 
 (define (handle-key s ke)
-  (cond [(key=? ke " ")     (shoot-missile s)]
-        [(key=? ke "left")  (tank-left s)]
-        [(key=? ke "right") (tank-right s)]
+  (cond [(or
+           (key=? ke "i")
+           (key=? ke " "))     (shoot-missile s)]
+        [(or
+           (key=? ke "h")
+           (key=? ke "left"))  (tank-left s)]
+        [(or
+           (key=? ke "l")
+           (key=? ke "right")) (tank-right s)]
         [else s]))
 
 
