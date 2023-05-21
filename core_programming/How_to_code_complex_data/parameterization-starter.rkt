@@ -1,10 +1,6 @@
 #lang racket
 (require test-engine/racket-tests)
 
-(* pi (sqr 4)) ;area of circle radius 4
-(* pi (sqr 6)) ;area of circle radius 6
-
-
 ;; ====================
 
 ;; ListOfString -> Boolean
@@ -85,7 +81,11 @@
 (define (square-roots lon)
   (map2 sqrt lon))
 
+(check-expect (map2 string-length (list "new" "old" "good" "bad"))
+              (list 3 3 4 3))
 
+
+;; ( X -> Y) (listof X) -> (listof Y)
 ;; given fn and (list n0 n1 n2 ...) produce (list (fn n0) (fn n1) (fn n2) ...)
 (define (map2 fn lon)
   (cond [(empty? lon) empty]
@@ -121,7 +121,7 @@
   (filter2 negative? lon))
 
 
-;; Function ListOfNumber -> ListOfNumber
+;; (X -> Boolean) (listof X) -> (listof X)
 ;; given fn and lon
 ;; produce a filterd lon with each number producing true when passed to fn
 (define (filter2 fn lon)
