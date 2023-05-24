@@ -48,6 +48,19 @@
          (... d
               (genrec-fn (next-problem d)))]))
 
+
+; Three part termination argument.
+;
+; Base case: (<- s CUTOFF)
+;
+; Reduction step: (/ s 2)
+;
+; Argument that repeated application of reduction step will eventually
+; reach the base case:
+;
+; As long as the CUTOFF is > 0 and s starts >=0 repeated division by 2
+; will eventually be less than CUTOFF.
+
 (define (stri s)
   (cond [(<= s CUTOFF) (triangle s "outline" "red")]
         [else
@@ -88,6 +101,18 @@
         [else
          (... d
               (genrec-fn (next-problem d)))]))
+
+; Three part termination argument.
+;
+; Base case: (<- s CUTOFF)
+;
+; Reduction step: (/ s 3)
+;
+; Argument that repeated application of reduction step will eventually
+; reach the base case:
+;
+; As long as the CUTOFF is > 0 and s starts >=0 repeated division by 3
+; will eventually be less than CUTOFF.
 
 (define (scar s)
   (cond [(<= s CUTOFF) (square s "outline" "red")]
