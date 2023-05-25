@@ -51,7 +51,7 @@
 
 ; Three part termination argument.
 ;
-; Base case: (<- s CUTOFF)
+; Base case: (<= s CUTOFF)
 ;
 ; Reduction step: (/ s 2)
 ;
@@ -104,7 +104,7 @@
 
 ; Three part termination argument.
 ;
-; Base case: (<- s CUTOFF)
+; Base case: (<= s CUTOFF)
 ;
 ; Reduction step: (/ s 3)
 ;
