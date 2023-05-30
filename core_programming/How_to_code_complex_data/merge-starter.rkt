@@ -18,15 +18,6 @@
 ; change a cell content so that 2 cells have the same value.
 
 
-;; .-----------------------------.---------.----------------------------------------.
-;; |        lsta / lstb          |  empty  |       (cons Number ListOfNumber)       |
-;; :-----------------------------+---------+----------------------------------------:
-;; | empty                       |  empty  |  lstb                                  |
-;; :-----------------------------+---------+----------------------------------------:
-;; | (cons Number ListOfNumber)  |  lsta   |  (append fn((first lsta) (rest lsta))  |
-;; :                             |         |    fn-for-los(first lsta) (rest lstb)) :
-;; '-----------------------------'---------'----------------------------------------'
-
 ;; ListOfNumbers ListOfNumbers -> ListOfNumbers
 ;; merge both list of numbers, and make sure the return a sorted list of numbers
 
@@ -35,31 +26,37 @@
 (check-expect (merge  empty (list 1 2 3)) (list 1 2 3))
 (check-expect (merge (list 1 4 6) (list 2 5 8))
               (list 1 2 4 5 6 8))
+(check-expect (merge (list 1 1 1 1) (list 2 3 4 5))
+              (list 1 1 1 1 2 3 4 5))
+(check-expect (merge (list 1 1 1 1 10) (list 2 3 4 5))
+              (list 1 1 1 1 2 3 4 5 10))
+(check-expect (merge empty (list 1 2 3)) (list 1 2 3))
 
 ;; (define (merge lsta lstb) empty) ; Stub
 
 (define (merge lsta lstb)
   (cond
-    [(and (empty? lsta) (empty? lstb)) empty]
     [(empty? lsta) lstb]
     [(empty? lstb) lsta]
     [else
-      (append
-        (sort-two-nums (first lsta) (first lstb))
-        (merge (rest lsta) (rest lstb)))]))
+      (merge (place-item (first lstb) lsta) (rest lstb))]))
 
-;; Number Number -> ListOfNumber
-;; produce a sorted list of two consumed numbers
+;; Natural (listof Natural) -> (listof Natural)
+;; place number in the right place in the list
 
-(check-expect (sort-two-nums 1 2) (list 1 2)) ; Tests
-(check-expect (sort-two-nums 3 1) (list 1 3))
+(check-expect (place-item 2 (list 1 3)) (list 1 2 3)) ; Tests
+(check-expect (place-item 3 (list 1 3)) (list 1 3 3))
 
-;; (define (sort-two-nums n1 n2) empty) ; Stub
+;; (define (place-item n empty) (cons n empty)) ; Stub
 
-(define (sort-two-nums n1 n2)
-  (if
-    (> n1 n2)
-    (list n2 n1)
-    (list n1 n2)))
+(define (place-item n lst)
+  (cond
+    [(empty? lst) (cons n empty)]
+    [else
+      (if  (< n (first lst))
+        (cons n lst)
+        (cons
+          (first lst)
+          (place-item n (rest lst))))]))
 
 (test)
