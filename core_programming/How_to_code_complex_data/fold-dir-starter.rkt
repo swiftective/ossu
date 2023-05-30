@@ -86,9 +86,9 @@
 
 (define (num-of-images d)
   (fold-dir
-    (lambda (_ total-subs total) (+ total-subs total))
-    (lambda (total total-subs) (+ total total-subs))
-    (lambda (_ total) (add1 total))
+    (λ (_ total-subs total) (+ total-subs total))
+    (λ (total total-subs) (+ total total-subs))
+    (λ (_ total) (add1 total))
     0 0 d))
 
 ;
@@ -108,11 +108,11 @@
 
 (define (find str d)
   (fold-dir
-    (lambda (name find-subs _)
+    (λ (name find-subs _)
       (if (string=? name str)
         true
         find-subs))
-    (lambda (bool bool2) (or bool bool2))
+    (λ (bool bool2) (or bool bool2))
     cons false empty d))
 
 

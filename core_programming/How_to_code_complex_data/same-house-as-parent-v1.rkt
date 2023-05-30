@@ -128,7 +128,7 @@
        (local
          [(define lowle
             (map
-             (lambda (e) (make-wle e (wiz-house w)))
+             (λ (e) (make-wle e (wiz-house w)))
              (wiz-children w)))]
          (fn-for-low
           (append lowle todo)

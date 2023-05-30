@@ -21,7 +21,7 @@
 
 (define (wide-only loi)
   (filter
-    (lambda (i) (> (image-width i) (image-height i)))
+    (λ (i) (> (image-width i) (image-height i)))
     loi))
 
 (test)

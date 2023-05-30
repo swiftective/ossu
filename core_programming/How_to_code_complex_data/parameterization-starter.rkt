@@ -67,7 +67,7 @@
 ;<template from ListOfNumber>
 
 (define (squares lon)
-  (map2 (lambda (x) (sqr x)) lon))
+  (map2 (λ (x) (sqr x)) lon))
 
 ;; ListOfNumber -> ListOfNumber
 ;; produce list of sqrt of every number in lon

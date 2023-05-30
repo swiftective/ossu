@@ -109,13 +109,13 @@
 
 (define (remove-debtors act)
   (remove-act
-   (lambda (act) (negative? (node-bal act)))
+   (λ (act) (negative? (node-bal act)))
    act))
 
 #;
 (define (remove-debtors act)
   (fold-act
-   (lambda (id name bal r l)
+   (λ (id name bal r l)
      (if (negative? bal)
          (join l r)
          (make-node id name bal l r)))
@@ -152,14 +152,14 @@
 
 (define (remove-profs act)
   (remove-act
-   (lambda (act) (has-prefix? "Prof." (node-name act)))
+   (λ (act) (has-prefix? "Prof." (node-name act)))
    act))
 
 
 #;
 (define (remove-profs act)
   (fold-act
-   (lambda (id name bal l r)
+   (λ (id name bal l r)
      (if (has-prefix? "Prof." name)
          (join l r)
          (make-node id name bal l r)))
@@ -219,13 +219,13 @@
 
 (define (remove-odd-characters act)
   (remove-act
-   (lambda (act) (odd? (string-length (node-name act))))
+   (λ (act) (odd? (string-length (node-name act))))
    act))
 
 #;
 (define (remove-odd-characters act)
   (fold-act
-   (lambda (id name bal l r)
+   (λ (id name bal l r)
      (if (odd? (string-length name))
          (join l r)
          (make-node id name bal l r)))
@@ -263,7 +263,7 @@
 
 (define (charge-fee act)
   (fold-act
-   (lambda (id name bal l r)
+   (λ (id name bal l r)
      (make-node id name (- bal 3) l r))
    false act))
 

@@ -280,7 +280,7 @@
          (check-duplicates
            (filter number?
                    (map
-                     (lambda (pos) (read-square bd pos))
+                     (λ (pos) (read-square bd pos))
                      unit)))))]
     (andmap check-unit? UNITS)))
 
@@ -316,7 +316,7 @@
     [(define false-pos (find-false bd))]
     (build-list
       9
-     (lambda (n)
+     (λ (n)
        (fill-square bd false-pos (add1 n)))))) ;stub
 
 ;; Board -> Pos

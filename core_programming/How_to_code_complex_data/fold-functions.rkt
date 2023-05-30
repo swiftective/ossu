@@ -138,7 +138,7 @@
               (list "D6" "D4" "F1" "F2" "D5" "F3"))
 
 (check-expect (fold-element
-               (lambda (n _ los) (cons n los))
+               (λ (n _ los) (cons n los))
                append empty D6)
               (list "D6" "D4" "F1" "F2" "D5" "F3"))
 
@@ -175,8 +175,8 @@
 
 (define (sum-data e)
   (fold-element
-   (lambda (_ data sum) (+ data sum))
-   (lambda (data sum) (+ data sum))
+   (λ (_ data sum) (+ data sum))
+   (λ (data sum) (+ data sum))
    0 e))
 
 ;
@@ -199,8 +199,8 @@
 
 (define (all-names e)
   (fold-element
-   (lambda (name _ los) (cons name los))
-   (lambda (losa losb) (append losa losb))
+   (λ (name _ los) (cons name los))
+   (λ (losa losb) (append losa losb))
    empty e))
 
 ;
@@ -227,18 +227,18 @@
 
 (define (find str e)
   (fold-element
-    (lambda (name data bool)
+    (λ (name data bool)
       (if (string=? str name) data bool))
-    (lambda (bool bool2) (or bool bool2))
+    (λ (bool bool2) (or bool bool2))
     false e))
 
 
 #;
 (define (find str e)
   (fold-element
-    (lambda (name data bool)
+    (λ (name data bool)
       (if (string=? str name) data bool))
-    (lambda (bool bool2)
+    (λ (bool bool2)
       (local [(define try bool)]
         (if (not (false? try)) try bool2)))
     false e))
