@@ -35,28 +35,18 @@
 ;; (define (merge lsta lstb) empty) ; Stub
 
 (define (merge lsta lstb)
-  (cond
-    [(empty? lsta) lstb]
-    [(empty? lstb) lsta]
-    [else
-      (merge (place-item (first lstb) lsta) (rest lstb))]))
+  (local
+    [(define (merge lsta lstb acc)
+       (cond
+         [(empty? lsta) (append (reverse acc) lstb)]
+         [(empty? lstb) (append (reverse acc) lsta)]
+         [else
+          (if (< (first lsta) (first lstb))
+              (merge (rest lsta) lstb
+                     (cons (first lsta) acc))
+              (merge lsta (rest lstb)
+                     (cons (first lstb) acc)))]))]
+    (merge lsta lstb empty)))
 
-;; Natural (listof Natural) -> (listof Natural)
-;; place number in the right place in the list
-
-(check-expect (place-item 2 (list 1 3)) (list 1 2 3)) ; Tests
-(check-expect (place-item 3 (list 1 3)) (list 1 3 3))
-
-;; (define (place-item n empty) (cons n empty)) ; Stub
-
-(define (place-item n lst)
-  (cond
-    [(empty? lst) (cons n empty)]
-    [else
-      (if  (< n (first lst))
-        (cons n lst)
-        (cons
-          (first lst)
-          (place-item n (rest lst))))]))
 
 (test)
