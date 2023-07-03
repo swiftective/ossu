@@ -70,3 +70,12 @@
         (if cv cv
           (let ([ans (assoc v xs)])
             (if ans (begin (cache-ans ans) ans) ans)))))))
+
+(define-syntax while-less
+  (syntax-rules (do)
+    [(while-less e1 do e2)
+     (letrec ([r1 e1]
+              [f (λ ()
+                   (let ([r2 e2])
+                     (if (>= r2 r1) #t (f))))])
+       (f)) ]))
